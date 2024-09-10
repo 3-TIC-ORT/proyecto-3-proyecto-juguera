@@ -1,0 +1,110 @@
+body{
+    background-color: #181818;
+    color: #747171;
+}
+
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #747171;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.grupoBotones{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.botonGuardar{
+    border: 0;
+    background: #38df17;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #2eb613;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 32px 40px;
+    transition: all .1s linear;
+}
+
+.botonGuardar:active{
+    box-shadow: 0 4px 0 #2eb613;
+    transform: translateY(3px);
+    opacity: 70%;
+}
+
+.botonCargar{
+    border: 0;
+    background: #281be9;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #1e14aa;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 32px 40px;
+    transition: all .1s linear;
+}
+
+.botonCargar:active{
+    box-shadow: 0 4px 0 #1e14aa;
+    transform: translateY(3px);
+    opacity: 70%;
+}
+
+.botonBorrar{
+    border: 0;
+    background: #f11b1b;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #be1515;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 32px 40px;
+    transition: all .1s linear;   
+}
+
+.botonBorrar:active{
+    box-shadow: 0 4px 0 #be1515;
+    transform: translateY(3px);
+    opacity: 70%;
+} 
+
+.controladorForm{
+    height: 5vh;
+    width: 15vw;
+    font-size: 20px;
+}
+
+.valorMostrar{
+    border-radius: 5px;
+    background: #223abe;
+    color: #181818;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.valorCaja{
+    display: flex;
+    gap: 30px;
+}
+
+.inputs{
+    display: flex;
+    gap: 15px;
+}

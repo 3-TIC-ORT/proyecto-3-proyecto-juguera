@@ -1,0 +1,73 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.rectangulo{
+    width: 700px;
+    height: 115px;
+    background-color: #D9D9D9;
+    text-align: center;
+    align-content: center;
+    font-size: 35px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.cajas{
+    width: 240px;
+    height: 235px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.ordenCajasAltas{
+    display: flex;
+    gap: 5px 90px;
+    flex-direction: row;
+}
+
+.ordenCajasBajas{
+    display: flex;
+    flex-direction: row;
+    gap: 5px 90px;
+}
+
+.volver{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    width: 350px;
+    height: 120px;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+}
+
+.texto{
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.espacioarriba2{
+    gap: 40px;
+}

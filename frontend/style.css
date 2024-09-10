@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 140px;
+}
+.imagen {
+    background: url(imagenfondo.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.circulo{
+    height: 200px;
+  width: 200px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.botonindex{
+    height: 500px;
+    width: 500px;
+    background-color: #D9D9D9;
+    color: black;
+    text-decoration: none;
+    font-size: 40px;
+    text-align: center;
+    align-content: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.rectangulo{
+    width: 600px;
+    height: 100px;
+    background-color: #D9D9D9;
+    text-align: center;
+    align-content: center;
+    font-size: 45px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.espacioCyR{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.espacioarriba{
+    gap: 1px;
+}
