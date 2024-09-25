@@ -1,9 +1,13 @@
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     gap: 100px;
+    background: url(imagenfondo.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;  
 }
 
 .rectangulo{

@@ -3,18 +3,18 @@ function elegidoSabor(Sabor){
 }
 
 document.getElementById("sabor1").addEventListener("click", function(){
-    elegidoSabor ("sabor1")
+    elegidoSabor ("Manzana")
 })
 
 document.getElementById("sabor2").addEventListener("click", function(){
-    elegidoSabor ("sabor2")
+    elegidoSabor ("Naranja")
 })
 
 document.getElementById("sabor3").addEventListener("click", function(){
-    elegidoSabor ("sabor3")
+    elegidoSabor ("Limon")
 })
 
 document.getElementById("sabor4").addEventListener("click", function(){
-    elegidoSabor ("sabor4")
+    elegidoSabor ("Frutilla")
 })
 

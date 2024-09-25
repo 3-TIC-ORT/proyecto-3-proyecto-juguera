@@ -1,10 +1,7 @@
 botonCompletar = document.getElementById("botonCompletar");
-textoFeedback = document.getElementById("");
 
 botonCompletar.addEventListener("click", () => {
-    postData("botonCompletar", botonCompletar, devolverBoton);
+    textoFeedback = document.getElementById("textoFeedback").value;
+    postData("textoFeedback", textoFeedback);
+    postData("botonCompletar", botonCompletar);
 });
-
-function devolverBoton(){
-    console.log("Hola boton");
-}

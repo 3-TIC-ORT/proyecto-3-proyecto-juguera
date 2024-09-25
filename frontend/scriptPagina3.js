@@ -3,9 +3,9 @@ function elegidoTamaño(Tamaño){
 }
 
 document.getElementById("tamaño1").addEventListener("click", function(){
-    elegidoTamaño ("tamaño1")
+    elegidoTamaño ("Vaso")
 })
 
 document.getElementById("tamaño2").addEventListener("click", function(){
-    elegidoTamaño ("tamaño2")
+    elegidoTamaño ("Jarra")
 })

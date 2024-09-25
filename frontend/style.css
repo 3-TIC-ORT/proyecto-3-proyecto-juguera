@@ -3,21 +3,21 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 140px;
+    gap: 135px;
 }
 .imagen {
     background: url(imagenfondo.png);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100%;
 }
 
 .circulo{
     height: 200px;
-  width: 200px;
-  background-color: #D9D9D9;
-  border-radius: 50%;
-  display: inline-block;
+    width: 200px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 .botonindex{
