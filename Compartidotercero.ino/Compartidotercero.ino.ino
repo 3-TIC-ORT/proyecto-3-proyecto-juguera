@@ -81,29 +81,43 @@ void funcion (int pin, String tamano, String tipo) {
     if (index1 != -1) { //verifica que haya un espacio
     sabor = input.substring(0,(index1 + 1)); //en sabor guarda desde el principio (index 0) hasta el espacio
     tamano = input.substring((index1 + 1)); //almacena desde el espacio hasta el final
+    
     Serial.println(sabor);
     Serial.println(tamano);
 
       if(sabor == "Naranja") {
-        funcion(NARANJA,tamano,"Concentrado");
+        Serial.println("elegiste naranja");
         lcd.print("Sabor Naranja");
-        delay(250);
-        funcion(bomba,tamano,"Normal");
-        delay(250);
-        funcion(motor,tamano,"Normal");
         delay(250);
         lcd.clear();
         lcd.print("Colocar vaso en la ranura");
-        funcion(electro,tamano,"Normal");
-        delay(250);
-        sabor="";
-        lcd.clear();
-        lcd.print("Terminado");
+        Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
+
+        if(Serial.available()>0) {
+          String confirmado = Serial.readStringUntil('\n'); //si hay algo en el serial que lo almacene en confrimado
+          Serial.println(confirmado);
+
+          if(confirmado == "confirmado") { //si confirmado esta confrimado que siga con el proceso 
+            Serial.println("seguir adelante");
+            funcion(NARANJA,tamano,"Concentrado");
+            funcion(bomba,tamano,"Normal");
+            delay(250);
+            funcion(motor,tamano,"Normal");
+            delay(250);
+            funcion(electro,tamano,"Normal");
+            delay(250);
+            sabor="";
+            lcd.clear();
+            lcd.print("Terminado");
+          }
+        }
+       
       }
 
 
   
       if(sabor == "Manzana") {
+          Serial.println("sabor manzana");
           funcion(MANZANA,tamano,"Concentrado");
           lcd.print("Sabor Manzana");
           delay(250);
@@ -118,110 +132,9 @@ void funcion (int pin, String tamano, String tipo) {
           sabor="";
           lcd.clear();
           lcd.print("Terminado");
-       }
+       } 
 
-
-
-
-    } else {
-      String data = input;
-      Serial.println(data);
-      data.trim();
-      
-      if (data == "limpieza") {
-        data= "";
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Poner");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("Recipiente");
-        delay(10000);
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Poner");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("Agua caliente");
-        data= "";
-        delay(5000);
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Empezando");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("Limpieza");
-        data = "";
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Limpiando");
-        digitalWrite(bomba, HIGH);
-        delay(10000);
-        digitalWrite(bomba, LOW);
-        digitalWrite(motor, HIGH);
-        delay(8000);
-        digitalWrite(motor, LOW);
-        digitalWrite(electro, HIGH);
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Limpieza");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("Terminada");
-        digitalWrite(led, HIGH);
-        digitalWrite(bocina, HIGH);
-        delay(1000);
-        digitalWrite(led, LOW);
-        digitalWrite(bocina, LOW);
-        delay(5000);
-        digitalWrite(electro, LOW);
-        delay(5000);
-        lcd.clear();
-        lcd.print(millis()/1000); 
-    
-      }else if(data == "recargar") {
-        
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Poner");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("Vaso");
-        delay(5000);
-        digitalWrite(bomba, HIGH);
-        digitalWrite(electro,HIGH);
-        delay(2200);
-        digitalWrite(bomba,LOW);
-        delay(2000);
-        digitalWrite(electro, LOW);
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Poner");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("Polvo");
-        delay(10000);
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Revolver");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("");
-        delay(10000);
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Poner concentrado");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("en el compartimento");
-        delay(7000);
-        digitalWrite(led, HIGH);
-        digitalWrite(bocina, HIGH);
-        lcd.clear();
-        lcd.setCursor(0,0); //posicion
-        lcd.print("Listo");
-        lcd.setCursor(1,1); //posicion
-        lcd.print("");
-        delay(1500);
-        digitalWrite(led, LOW);
-        digitalWrite(bocina, LOW);
-        lcd.clear();
-        lcd.print(millis()/1000);
-
-      } else{
-
-        data= "";
-      }
-    }
   } 
+
+}
 } //fin void loop
