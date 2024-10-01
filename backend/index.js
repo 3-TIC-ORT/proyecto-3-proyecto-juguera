@@ -43,4 +43,22 @@ onEvent("botonCompletar", () => {
     }
 });
 
+/*import {SerialPort} from "serialport";
+const port = new SerialPort({
+    path: 'COM8',
+    baudRate: 9600,
+})
+
+port.on("open", ()=>{
+    console.log("Funco");
+})
+
+port.on("data",(data)=>{
+    console.log(data.toString())
+})
+
+port.write(data+"\n", (err)=>{
+    console.error(err);
+})*/
+
 startServer();
