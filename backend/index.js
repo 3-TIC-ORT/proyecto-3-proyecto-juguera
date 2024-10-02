@@ -7,6 +7,7 @@ if (fs.existsSync("opcionesElegidas.json")) {
 
 let Sabor = "";
 let Tamaño = "";
+let Texto = "";
 
 onEvent("opcionesSabor", (opcionesSabor) => {
     Sabor = opcionesSabor;
@@ -18,53 +19,46 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
     console.log("Tamaño recibido:", Tamaño);
 });
 
+onEvent("textoFeedback", (textoFeedback) => {
+    Texto = textoFeedback;
+    console.log("Texto recibido:", Texto);
+})
+
 onEvent("botonCompletar", () => {
-    console.log("/////////Boton recibido")
-    if (Sabor || Tamaño) {
-        console.log("//////////Evento de clic recibido");
+    console.log("/////////Boton recibido");
+    if (Sabor && Tamaño && Texto) {
+        let listaVacia = JSON.parse(fs.readFileSync("opcionesElegidas.json", "utf-8"));
         
-        let listaVacia = [];
-        let lista = {
-            "opcionSabor": "",
-            "opcionTamaño": ""
+        const lista = {
+            opcionSabor: Sabor,
+            opcionTamaño: Tamaño,
+            opcionTexto: Texto
         };
 
-        try {
-            listaVacia = JSON.parse(fs.readFileSync("opcionesElegidas.json", "utf-8"));
-            
-            switch (Sabor) {
-                case "sabor1":
-                    lista.opcionSabor = "Manzana";
-                    break;
-                case "sabor2":
-                    lista.opcionSabor = "Naranja";
-                    break;
-                case "sabor3":
-                    lista.opcionSabor = "Limón";
-                    break;
-                case "sabor4":
-                    lista.opcionSabor = "Frutilla";
-                    break;
-            }
-
-            switch (Tamaño) {
-                case "tamaño1":
-                    lista.opcionTamaño = "Vaso";
-                    break;
-                case "tamaño2":
-                    lista.opcionTamaño = "Jarra";
-                    break;
-            }
-
-            listaVacia.push(lista);
-            fs.writeFileSync("opcionesElegidas.json", JSON.stringify(listaVacia, null, 2), "utf-8");
-            console.log("///////Opciones guardadas exitosamente");
-        } catch (error) {
-            console.error("///////Error al leer o escribir el archivo JSON", error);
-        }
+        listaVacia.push(lista);
+        fs.writeFileSync("opcionesElegidas.json", JSON.stringify(listaVacia, null, 2), "utf-8");
+        console.log("///////Opciones guardadas exitosamente");
     } else {
-        console.error("///////Por favor selecciona una opción válida de sabor y tamaño.");
+        console.error("///////Por favor selecciona una opción válida de sabor, tamaño y texto.");
     }
 });
+
+/*import {SerialPort} from "serialport";
+const port = new SerialPort({
+    path: 'COM8',
+    baudRate: 9600,
+})
+
+port.on("open", ()=>{
+    console.log("Funco");
+})
+
+port.on("data",(data)=>{
+    console.log(data.toString())
+})
+
+port.write(data+"\n", (err)=>{
+    console.error(err);
+})*/
 
 startServer();
