@@ -1,18 +1,22 @@
 #include <Wire.h>
-#include <Adafruit_LiquidCrystal.h>
-Adafruit_LiquidCrystal lcd(12,11,5,4,3,2);
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16,2);
 
-#define bomba 6
-#define motor 7
-#define led 24
-#define electro 26
+
+#define bomba 24
+#define motor 51
+#define led 6
+#define electro 
 #define bocina 28
+
+String data = "";
 
 void setup() { 
  Serial.begin(9600);
-   
-  
-  lcd.begin(16, 2);
+  Wire.begin();
+  lcd.setBacklight(HIGH);
+  lcd.init();
+
   pinMode(bomba,OUTPUT); //Bomba
   pinMode(motor,OUTPUT);  // Motor
   pinMode(led,OUTPUT);  // LED
@@ -24,27 +28,31 @@ void setup() {
 
 void loop() {
 
-  lcd.setBacklight(HIGH);
+ 
 
   if (Serial.available() > 0){
-   String data = Serial.readString();
+   data = Serial.readString();
     Serial.print(data);
    data.trim();
    
     if (data == "limpieza") {
       data= "";
-      String data = Serial.readString();
+      data = Serial.readString();
       Serial.print(data);
       data.trim();
-
-      while(data != "continuar"){
-        String data = Serial.readString();
-        Serial.print(data);
-        lcd.setCursor(0,0); //posicion
+      lcd.setCursor(0,0); //posicion
         lcd.print("Poner");
         lcd.setCursor(1,1); //posicion
         lcd.print("Recipiente");
+      while(true){
         data= "";
+       data = Serial.readString();
+        Serial.print(data);
+        data.trim();
+        if(data=="confirmado"){
+          break;
+        }
+        
       }
         
         lcd.clear();
@@ -54,7 +62,15 @@ void loop() {
         lcd.print("Agua caliente");
         data= "";
       
-
+       while(true){
+        data= "";
+       data = Serial.readString();
+        Serial.print(data);
+        data.trim();
+        if(data=="confirmado"){
+          break;
+        }
+      }
         
         lcd.clear();
         lcd.setCursor(0,0); //posicion
@@ -97,7 +113,17 @@ void loop() {
       lcd.print("Poner");
      lcd.setCursor(1,1); //posicion
      lcd.print("Vaso");
-      delay(5000);
+      
+      while(true){
+        data= "";
+       data = Serial.readString();
+        Serial.print(data);
+        data.trim();
+        if(data=="confirmado"){
+          break;
+        }
+        
+      }
       digitalWrite(bomba, HIGH);
       digitalWrite(electro,HIGH);
       delay(2200);
@@ -109,19 +135,46 @@ void loop() {
       lcd.print("Poner");
       lcd.setCursor(1,1); //posicion
       lcd.print("Polvo");
-      delay(10000);
+      while(true){
+        data= "";
+       data = Serial.readString();
+        Serial.print(data);
+        data.trim();
+        if(data=="confirmado"){
+          break;
+        }
+        
+      }
       lcd.clear();
       lcd.setCursor(0,0); //posicion
       lcd.print("Revolver");
       lcd.setCursor(1,1); //posicion
       lcd.print("");
-      delay(1000);
+      while(true){
+        data= "";
+       data = Serial.readString();
+        Serial.print(data);
+        data.trim();
+        if(data=="confirmado"){
+          break;
+        }
+        
+      }
       lcd.clear();
       lcd.setCursor(0,0); //posicion
       lcd.print("Poner concentrado");
       lcd.setCursor(1,1); //posicion
       lcd.print("en el compartimento");
-      delay(7000);
+      while(true){
+        data= "";
+       data = Serial.readString();
+        Serial.print(data);
+        data.trim();
+        if(data=="confirmado"){
+          break;
+        }
+        
+      }
      digitalWrite(led, HIGH);
       digitalWrite(bocina, HIGH);
      lcd.clear();
