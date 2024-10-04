@@ -24,7 +24,8 @@ LiquidCrystal_I2C lcd(0x27, 16,2);
 String sabor;
 String tamano;
 String data;
-String confirmado;
+String confirmado1;
+int contador = 0;
 
 
 //FUNCION
@@ -76,7 +77,9 @@ void setup() {
 
 void loop() {
 
-  if (Serial.available() > 0) {
+  Serial.println(contador);
+
+  if (Serial.available() > 0 && contador == 0) { //si hay algo en el serial y contador es 0
     String input = Serial.readStringUntil('\n'); //lee hasta el salto de linea y lo almacena en input
 
     int index1 = input.indexOf(' '); //guarda el valor de donde haya un espacio en index1
@@ -85,30 +88,34 @@ void loop() {
       tamano = input.substring((index1 + 1)); //almacena desde el espacio hasta el final
       Serial.println(sabor);
       Serial.println(tamano);
+
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print(sabor);
+      delay(1000);
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Colocar vaso");
+      lcd.setCursor(1,1);
+      lcd.print("en la ranura");
+
+      Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
+      Serial.println(input);
+      contador = 15; //cambia contador a 15 (no vuelve a entrar al serial de arriba)
     } 
-
-    lcd.clear();
-    lcd.setCursor(0,0);
-    lcd.print(sabor);
-    delay(1000);
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("Colocar vaso");
-    lcd.setCursor(1,1);
-    lcd.print("en la ranura");
-
-    Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
-
-    delay(5000);  
-    while (Serial.available() > 0) {
-      confirmado = Serial.readStringUntil('\n'); //si hay algo en el serial que lo almacene en confrimado
-      Serial.println(confirmado);
-    }
   }
 
+  if (contador == 15 && Serial.available() > 0) { //si contador es 15 y hay algo en el serial
+    delay(250);
+    Serial.println("100");
+    confirmado1 = Serial.readStringUntil('\n');
+    Serial.println(confirmado1);
+    contador = 0; //lo cambia a 0 para que vuelva a entrar en el de arriba despues 
+  } 
+
   
-  if(confirmado == "confirmado") { //si confirmado esta confrimado que siga con el proceso 
-    confirmado = "";
+  if(confirmado1 == "confirmado") { //si confirmado esta confrimado que siga con el proceso 
+    confirmado1 = "";
     Serial.println("Seguir adelante");
 
     if(sabor == "Naranja ") {
