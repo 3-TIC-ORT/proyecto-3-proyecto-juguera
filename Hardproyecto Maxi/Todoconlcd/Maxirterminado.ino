@@ -6,7 +6,7 @@ LiquidCrystal_I2C lcd(0x27, 16,2);
 #define bomba 24
 #define motor 51
 #define led 6
-#define electro 
+#define electro 5
 #define bocina 28
 
 String data = "";
@@ -78,6 +78,7 @@ void loop() {
         lcd.setCursor(1,1); //posicion
         lcd.print("Limpieza");
         data = "";
+        delay(4000);
         lcd.clear();
       lcd.setCursor(0,0); //posicion
         lcd.print("Limpiando");
