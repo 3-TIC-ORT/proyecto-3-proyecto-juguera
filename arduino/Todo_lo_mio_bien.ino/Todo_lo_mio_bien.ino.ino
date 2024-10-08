@@ -24,7 +24,7 @@ LiquidCrystal_I2C lcd(0x27, 16,2);
 String sabor;
 String tamano;
 String data;
-String confirmado1;
+String confirmado;
 int contador = 0;
 
 
@@ -108,14 +108,14 @@ void loop() {
   if (contador == 15 && Serial.available() > 0) { //si contador es 15 y hay algo en el serial
     delay(250);
     Serial.println("100");
-    confirmado1 = Serial.readStringUntil('\n');
-    Serial.println(confirmado1);
+    confirmado = Serial.readStringUntil('\n');
+    Serial.println(confirmado);
     contador = 0; //lo cambia a 0 para que vuelva a entrar en el de arriba despues 
   } 
 
   
-  if(confirmado1 == "confirmado") { //si confirmado esta confrimado que siga con el proceso 
-    confirmado1 = "";
+  if(confirmado == "confirmado") { //si confirmado esta confrimado que siga con el proceso 
+    confirmado = "";
     Serial.println("Seguir adelante");
 
     if(sabor == "Naranja ") {
