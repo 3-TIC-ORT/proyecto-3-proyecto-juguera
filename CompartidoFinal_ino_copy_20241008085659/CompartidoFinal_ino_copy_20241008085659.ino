@@ -156,6 +156,8 @@ void loop() {
       lcd.print("Poner");
       lcd.setCursor(1,1); //posicion
       lcd.print("Recipiente");
+
+      Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
       while(true){
         data= "";
        data = Serial.readString();
@@ -174,6 +176,7 @@ void loop() {
       lcd.print("Agua caliente");
       data= "";
       
+      Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
       while(true){
         data= "";
        data = Serial.readString();
@@ -216,6 +219,8 @@ void loop() {
       delay(5000);
       lcd.clear();
       lcd.print(millis()/1000);
+      Serial.println("limpieza terminada"); //le pregunto a timo si esta confirmado que el vaso esta ahí
+      contador = 0;
       
     }
 
@@ -228,6 +233,7 @@ void loop() {
       lcd.setCursor(1,1); //posicion
       lcd.print("Vaso");
       
+      Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
       while(true){
         data= "";
        data = Serial.readString();
@@ -249,6 +255,8 @@ void loop() {
       lcd.print("Poner");
       lcd.setCursor(1,1); //posicion
       lcd.print("Polvo");
+
+      Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
       while(true){
         data= "";
        data = Serial.readString();
@@ -264,6 +272,7 @@ void loop() {
       lcd.print("Revolver");
       lcd.setCursor(1,1); //posicion
       lcd.print("");
+      Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
       while(true){
         data= "";
        data = Serial.readString();
@@ -279,6 +288,8 @@ void loop() {
       lcd.print("Poner concentrado");
       lcd.setCursor(1,1); //posicion
       lcd.print("en el compartimento");
+      
+      Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
       while(true){
         data= "";
        data = Serial.readString();
@@ -301,10 +312,13 @@ void loop() {
       digitalWrite(bocina, LOW);
       lcd.clear();
       lcd.print(millis()/1000);
+      Serial.println("recarga terminada"); //le pregunto a timo si esta confirmado que el vaso esta ahí
+      contador = 0;
 
       }else{
 
         data= "";
+        contador = 0;
       }
       data= "";
   } 
