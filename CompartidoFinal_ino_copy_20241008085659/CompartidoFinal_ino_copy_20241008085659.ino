@@ -4,20 +4,21 @@
 LiquidCrystal_I2C lcd(0x27, 16,2);
 
 //defines de los pinouts
-#define bomba 6
-#define motor 51
+#define bomba 7
+#define motor 2
 #define led 24
-#define electro 5
+#define electro 8
 #define bocina 28
-#define NARANJA 3
-#define MANZANA 2
+#define NARANJA 5
+#define MANZANA 4
 
 //defino el tiempo que va a tener el vaso y la jarra (en el normal y en el concentrado)
 #define TIEMPO_JARRA_NORMAL 5
 #define TIEMPO_VASO_NORMAL 3
 #define TIEMPO_JARRA_CONCENTRADO 2
 #define TIEMPO_VASO_CONCENTRADO 1
-#define DELAY 20
+
+#define DELAY 250
 
 
 //otras variables
