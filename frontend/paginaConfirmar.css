@@ -18,35 +18,6 @@ body{
     display: inline-block;
 }
 
-.cajaOpcion{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 240px;
-    width: 240px;
-    background: rgba(0, 0, 0, 0.75);
-    color: black;
-    text-decoration: none;
-    font-size: 30px;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    border-radius: 50%;
-}
-
-.cajaOpcion:active{
-    transform: translateY(4px);
-    opacity: 70%;
-}
-
-.divCirculo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    margin-bottom: 10%;
-}
-
 .textoPrincipal{
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
@@ -57,14 +28,6 @@ body{
     height: 100px;
     width: 600px;
     margin-left: 10px;
-}
-
-.cajaOpciones{
-    display: flex;
-    margin-top: 10%;
-    gap: 70px;
-    flex-direction: column;
-    transform: translateY(-20%);
 }
 
 .volver{
@@ -126,4 +89,13 @@ body{
 .texto{
     margin-left: 30px;
     font-size: 25px;
+}
+
+.confirmar{
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(180deg, #FE542B 100%, #666666 100%);
+    border: 8px solid #000000;
+    border-radius: 15px;
+    transition: all .1s linear;
 }

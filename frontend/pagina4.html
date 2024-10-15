@@ -14,17 +14,46 @@
 </head>
 <body>
     <div class="espacioCyR">
-        <div class="rectangulo"></div>
+        <img class="circulo" src="JUGOMIX.png">
+        <p class="textoPrincipal">¡DEJANOS TU OPINION!</p>
     </div>
     <div class="caja">
         <div class="feedback">
-            <p>Feedback</p>
-            <div class="divinput"><textarea class="textofeedback" maxlength="170" id="textoFeedback"></textarea></div>
+            <p>OPINION</p>
+            <div class="star-wrap">
+                <input class="star" checked type="radio" value="-1" id="skip-star" name="star-radio" autocomplete="off" />
+                <label class="star-label hidden"></label>
+                <input class="star" type="radio" id="st-1" value="1" name="star-radio" autocomplete="off" />
+                <label class="star-label" for="st-1">
+                    <div class="star-shape"></div>
+                </label>
+                <input class="star" type="radio" id="st-2" value="2" name="star-radio" autocomplete="off" />
+                <label class="star-label" for="st-2">
+                    <div class="star-shape">
+                        <div class="colorGradientBg"></div>
+                    </div>
+                </label>
+                <input class="star" type="radio" id="st-3" value="3" name="star-radio" autocomplete="off" />
+                <label class="star-label" for="st-3">
+                    <div class="star-shape"></div>
+                </label>
+                <input class="star" type="radio" id="st-4" value="4" name="star-radio" autocomplete="off" />
+                <label class="star-label" for="st-4">
+                    <div class="star-shape"></div>
+                </label>
+                <input class="star" type="radio" id="st-5" value="5" name="star-radio" autocomplete="off" />
+                <label class="star-label" for="st-5">
+                    <div class="star-shape"></div>
+                </label>
+                <label class="skip-button" for="skip-star">
+                &times;
+                </label>
+            </div>
         </div>
     </div>
     <div></div>
-    <a href="index.html" class="completar" id="botonCompletar">Completar</a>
-    <a class="volver" href="pagina3.html">
+    <a href="index.html" class="completar" id="botonCompletar">CONFIRMAR PEDIDO</a>
+    <a class="volver" href="paginaConfirmar.html">
         <p class="texto">ANTERIOR</p>
     </a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>

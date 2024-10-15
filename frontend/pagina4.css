@@ -11,12 +11,22 @@ body {
     background: linear-gradient(174.02deg, #FFBD00 19.27%, #FF971E 39.63%, #FE3032 107.77%);
 }
 
-.rectangulo{
-    height: 500px;
-    width: 500px;
-    background-image: url(JUGOMIX.png);
+.circulo{
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
     display: inline-block;
+}
+
+.textoPrincipal{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 39px;
+    color: #000000;
+    font-size: 50px;
+    height: 0px;
 }
 
 .espacioCyR{
@@ -28,35 +38,120 @@ body {
 }
 
 .feedback {
-    font-size: 35px;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
     height: 250px;
     width: 510px;
-    background-color: #D9D9D9;
+    background-color: #F3EDF7;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 45px;
+}
+
+.feedback p{
+    font-size: 45px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #000000;
+}
+
+.wrapper {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.call-to-action-text {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.star-wrap {
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -50px;
+}
+
+.star-label.hidden {
+    display: none;
+}
+
+.star-label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+}
+
+@media (min-width: 840px) {
+    .star-label {
+    width: 6rem;
+    height: 6rem;
+    }
+}
+
+.star-shape {
+    width: 60%;
+    height: 60%;
+    clip-path: polygon(50% 5%, 63% 35%, 95% 35%, 70% 58%, 80% 85%, 50% 70%, 20% 85%, 30% 58%, 5% 35%, 37% 35%);
+    background: linear-gradient(180deg, #FF971E 0%, #FE3032 100%);
+}
+
+.star:checked + .star-label ~ .star-label .star-shape {
+    background: lightgray;
+}
+
+.star {
+    position: fixed;
+    opacity: 0;
+    left: -90000px;
+}
+
+.star:focus + .star-label {
+    outline: 2px dotted black;
+}
+
+.skip-button {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: -2rem;
+    right: -1rem;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 2rem;
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.skip-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#skip-star:checked ~ .skip-button {
+    display: none;
 }
 
 .completar {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 600px;
-    background-color: #D9D9D9;
+    height: 150px;
+    width: 450px;
+    background-color: #FFC200;
     color: black;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
     font-family: "Inter", sans-serif;
-    font-weight: 500;
+    font-weight: 800;
     font-style: normal;
-    border-radius: 10px;
+    border-radius: 80px;
 }
 
 .caja {
