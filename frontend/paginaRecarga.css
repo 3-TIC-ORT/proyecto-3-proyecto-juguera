@@ -1,0 +1,64 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 135px;
+    position: relative;
+    width: 90vw;
+    height: 98.55vh;
+    background: linear-gradient(174.02deg, #FFBD00 19.27%, #FF971E 39.63%, #FE3032 107.77%);
+}
+
+.volver{
+    display: flex;
+    align-items: center;
+    width: 307px;
+    height: 79px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 20px;
+    border: 5px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 35px;
+    background: linear-gradient(90deg, #FF971E 0%, #FE3032 100%);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-right: 40px;
+}
+
+.volver::after {
+    content: '';
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; 
+    height: 5px; 
+    background-color: #000000; 
+}
+
+.volver::before {
+    content: '';
+    position: absolute;
+    right: 5px; 
+    top: 50%;
+    transform: translateY(-50%) translateX(-230%) rotate(135deg);
+    width: 17px;
+    height: 17px;
+    border-right: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+}
+
+.texto {
+    margin-left: 30px;
+    font-size: 25px;
+}

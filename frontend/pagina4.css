@@ -11,21 +11,20 @@ body {
     background: linear-gradient(174.02deg, #FFBD00 19.27%, #FF971E 39.63%, #FE3032 107.77%);
 }
 
-.rectangulo {
-    width: 700px;
-    height: 115px;
-    background-color: #D9D9D9;
-    text-align: center;
-    align-content: center;
-    font-size: 35px;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    position: absolute;
-    top: 25px;
-    left: 50%; 
-    transform: translateX(-50%); 
+.rectangulo{
+    height: 500px;
+    width: 500px;
+    background-image: url(JUGOMIX.png);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.espacioCyR{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-25%);
 }
 
 .feedback {
@@ -34,14 +33,14 @@ body {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    height: 450px;
+    height: 250px;
     width: 510px;
     background-color: #D9D9D9;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 120px;
+    gap: 30px;
 }
 
 .completar {
@@ -66,23 +65,60 @@ body {
     flex-direction: column;
 }
 
-.volver {
+.volver{
     display: flex;
     align-items: center;
-    height: 100px;
-    width: 250px;
-    background-color: #D9D9D9;
-    color: black;
+    width: 307px;
+    height: 79px;
     text-decoration: none;
-    font-size: 40px;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    border-radius: 10px;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 20px;
+    left: 20px;
     margin: 20px;
+    border: 5px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 35px;
+    background: linear-gradient(90deg, #FF971E 0%, #FE3032 100%);
+    box-shadow: 0 5px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-right: 40px;
+    transition: all .1s linear;
+}
+
+.volver:active{
+    box-shadow: 0 4px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
+    transform: translateY(4px);
+    opacity: 70%;
+}
+
+.volver::after {
+    content: '';
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; 
+    height: 5px; 
+    background-color: #000000; 
+}
+
+.volver::before {
+    content: '';
+    position: absolute;
+    right: 5px; 
+    top: 50%;
+    transform: translateY(-50%) translateX(-230%) rotate(135deg);
+    width: 17px;
+    height: 17px;
+    border-right: 4px solid #000000;
+    border-bottom: 4px solid #000000;
 }
 
 .texto {
@@ -99,8 +135,8 @@ body {
 }
 
 .textofeedback {
-    width: 300px;
-    height: 150px;
+    width: 350px;
+    height: 65px;
     padding: 10px;
     font-size: 16px;
     font-family: "Inter", sans-serif;

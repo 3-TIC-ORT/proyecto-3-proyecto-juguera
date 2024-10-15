@@ -1,5 +1,6 @@
 import { onEvent, startServer } from "soquetic";
 import fs from "fs";
+import {SerialPort} from "serialport";
 
 if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
@@ -43,14 +44,13 @@ onEvent("botonCompletar", () => {
     }
 });
 
-/*import {SerialPort} from "serialport";
 const port = new SerialPort({
     path: 'COM8',
     baudRate: 9600,
 })
 
 port.on("open", ()=>{
-    console.log("Funco");
+    console.log("Puerto Abierto");
 })
 
 port.on("data",(data)=>{
@@ -59,6 +59,6 @@ port.on("data",(data)=>{
 
 port.write(data+"\n", (err)=>{
     console.error(err);
-})*/
+})
 
 startServer();
