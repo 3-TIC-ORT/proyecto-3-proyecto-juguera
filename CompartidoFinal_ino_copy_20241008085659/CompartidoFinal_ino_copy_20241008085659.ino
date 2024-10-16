@@ -28,6 +28,10 @@ String confirmado;
 int contador = 0;
 String data = "";
 
+// variables para la division de palabras
+int index1; //el lugar de los espacios
+String input = ""; //la palabra completa
+
 
 //FUNCION
 //le entrego el pin que tiene que prender, el tiempo y si es concentrado o normal
@@ -79,9 +83,9 @@ void setup() {
 void loop() {
 
   if (Serial.available() > 0 && contador == 0) { //si hay algo en el serial y contador es 0
-    String input = Serial.readStringUntil('\n'); //lee hasta el salto de linea y lo almacena en input
+    input = Serial.readStringUntil('\n'); //lee hasta el salto de linea y lo almacena en input
 
-    int index1 = input.indexOf(' '); //guarda el valor de donde haya un espacio en index1
+    index1 = input.indexOf(' '); //guarda el valor de donde haya un espacio en index1
     if (index1 != -1) { //verifica que haya un espacio
       sabor = input.substring(0,(index1 + 1)); //en sabor guarda desde el principio (index 0) hasta el espacio
       tamano = input.substring((index1 + 1)); //almacena desde el espacio hasta el final
@@ -99,8 +103,8 @@ void loop() {
       lcd.print("en la ranura");
 
       Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
-      Serial.println(input);
       contador = 15; //cambia contador a 15 (no vuelve a entrar al serial de arriba)
+
     } else if (index1 = -1) {
       data = input; 
       data.trim();
@@ -143,8 +147,6 @@ void loop() {
     Serial.println("temrinado");
     sabor = "";
   }
-
-
 
   if (contador == 4){
 
@@ -276,7 +278,7 @@ void loop() {
       Serial.println("vasoconfirmado"); //le pregunto a timo si esta confirmado que el vaso esta ahí
       while(true){
         data= "";
-       data = Serial.readString();
+        data = Serial.readString();
         Serial.print(data);
         data.trim();
         if(data=="confirmado"){
@@ -301,9 +303,9 @@ void loop() {
         }
         
       }
-     digitalWrite(led, HIGH);
+      digitalWrite(led, HIGH);
       digitalWrite(bocina, HIGH);
-     lcd.clear();
+      lcd.clear();
       lcd.setCursor(0,0); //posicion
       lcd.print("Listo");
       lcd.setCursor(1,1); //posicion
