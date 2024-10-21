@@ -58,6 +58,12 @@ body{
     border-bottom: 4px solid #000000;
 }
 
+.volver:active{
+    box-shadow: 0 4px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
+    transform: translateY(4px);
+    opacity: 70%;
+}
+
 .texto {
     margin-left: 30px;
     font-size: 25px;

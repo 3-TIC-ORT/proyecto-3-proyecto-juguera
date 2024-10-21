@@ -9,6 +9,7 @@ body {
     height: 100vh; 
     margin: 0; 
     background: linear-gradient(174.02deg, #FFBD00 19.27%, #FF971E 39.63%, #FE3032 107.77%);
+    overflow-x: hidden;
 }
 
 .circulo{
@@ -25,7 +26,7 @@ body {
     font-weight: 800;
     line-height: 39px;
     color: #000000;
-    font-size: 50px;
+    font-size: 60px;
     height: 0px;
 }
 
@@ -95,10 +96,10 @@ body {
 }
 
 .star-shape {
-    width: 60%;
-    height: 60%;
+    width: 90%;
+    height: 90%;
     clip-path: polygon(50% 5%, 63% 35%, 95% 35%, 70% 58%, 80% 85%, 50% 70%, 20% 85%, 30% 58%, 5% 35%, 37% 35%);
-    background: linear-gradient(180deg, #FF971E 0%, #FE3032 100%);
+    background: linear-gradient(180deg, #FF971E 0%, gold 100%);
 }
 
 .star:checked + .star-label ~ .star-label .star-shape {
@@ -109,10 +110,6 @@ body {
     position: fixed;
     opacity: 0;
     left: -90000px;
-}
-
-.star:focus + .star-label {
-    outline: 2px dotted black;
 }
 
 .skip-button {

@@ -3,3 +3,6 @@ checkBox.addEventListener("click", async()=>{
     checkBox.style.opacity = "70%";
     window.location.href = "pagina4.html";
 })
+
+let Confirmar = "Si";
+postData("Confirmar", Confirmar);

@@ -122,11 +122,10 @@ body{
     border-radius: 35px;
     background: linear-gradient(90deg, #FE3032 0%, #FF971E 100%);
     box-shadow: 0 5px 0 linear-gradient(90deg, #ca2629 0%, #d87f19 100%);
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 39px;
     color: #000000;
     box-sizing: border-box;

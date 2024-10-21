@@ -8,7 +8,14 @@ if (fs.existsSync("opcionesElegidas.json")) {
 
 let Sabor = "";
 let Tamaño = "";
-let Texto = "";
+let Estrellas = "";
+let Confirmado = false;
+
+function guardarDatos(datos) {
+    let listaVacia = JSON.parse(fs.readFileSync("opcionesElegidas.json", "utf-8"));
+    listaVacia.push(datos);
+    fs.writeFileSync("opcionesElegidas.json", JSON.stringify(listaVacia, null, 2), "utf-8");
+}
 
 onEvent("opcionesSabor", (opcionesSabor) => {
     Sabor = opcionesSabor;
@@ -18,33 +25,38 @@ onEvent("opcionesSabor", (opcionesSabor) => {
 onEvent("opcionesTamaño", (opcionesTamaño) => {
     Tamaño = opcionesTamaño;
     console.log("Tamaño recibido:", Tamaño);
-});
-
-onEvent("textoFeedback", (textoFeedback) => {
-    Texto = textoFeedback;
-    console.log("Texto recibido:", Texto);
-})
-
-onEvent("botonCompletar", () => {
-    console.log("/////////Boton recibido");
-    if (Sabor && Tamaño && Texto) {
-        let listaVacia = JSON.parse(fs.readFileSync("opcionesElegidas.json", "utf-8"));
-        
-        const lista = {
-            opcionSabor: Sabor,
-            opcionTamaño: Tamaño,
-            opcionTexto: Texto
-        };
-
-        listaVacia.push(lista);
-        fs.writeFileSync("opcionesElegidas.json", JSON.stringify(listaVacia, null, 2), "utf-8");
-        console.log("///////Opciones guardadas exitosamente");
+    if (Sabor && Tamaño) {
+        const lista = { "opcionSabor": Sabor, "opcionTamaño": Tamaño };
+        guardarDatos(lista);
     } else {
-        console.error("///////Por favor selecciona una opción válida de sabor, tamaño y texto.");
+        console.error("No funco");
     }
 });
 
-const port = new SerialPort({
+onEvent("Confirmar", (Confirmar) => {
+    if (!Confirmado) {
+        console.log(Tamaño, "confirmado?", Confirmar);
+        const lista = { "Confirmacion": Tamaño + "? " + Confirmar };
+        guardarDatos(lista);
+        Confirmado = true;
+    } else {
+        console.log("Ya fue confirmado");
+    }
+});
+
+onEvent("mandarOpinion", (mandarOpinion) => {
+    if (mandarOpinion){
+        console.log("Opinión recibida:", mandarOpinion);
+        const lista = { "Estrellas": Estrellas };
+        guardarDatos(lista); 
+    }
+    else{
+        console.log("No funco las estrellas")
+    }
+});
+
+
+/*const port = new SerialPort({
     path: 'COM8',
     baudRate: 9600,
 })
@@ -59,6 +71,6 @@ port.on("data",(data)=>{
 
 port.write(data+"\n", (err)=>{
     console.error(err);
-})
+})*/
 
 startServer();

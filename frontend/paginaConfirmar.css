@@ -25,7 +25,7 @@ body{
     font-weight: 800;
     color: #000000;
     font-size: 70px;
-    height: 100px;
+    height: 200px;
     width: 600px;
     margin-left: 10px;
 }
@@ -92,10 +92,30 @@ body{
 }
 
 .confirmar{
-    height: 100px;
-    width: 100px;
-    background: linear-gradient(180deg, #FE542B 100%, #666666 100%);
-    border: 8px solid #000000;
-    border-radius: 15px;
+    height: 420px;
+    width: 500px;
     transition: all .1s linear;
+    transform: translateY(-40px);
+}
+
+.confirmar:active{
+    opacity: 70%;
+}
+
+.aConfirmar{
+    display: flex;
+    justify-content: center;
+}
+
+.espacioCyR{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divDef{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
