@@ -12,15 +12,16 @@ body{
 }
 
 .circulo{
-    height: 600px;
-    width: 600px;
+    top: 20%;
+    height: 500px;
+    width: 500px;
     border-radius: 50%;
     display: inline-block;
 }
 
 .bienvenida {
-    width: 600px; 
-    height: 20px; 
+    width: 500px; 
+    height: 5px; 
     top: 100px; 
     font-family: 'Quicksand', sans-serif;
     font-style: normal;
@@ -46,7 +47,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 0px 10px 10px;
-    gap: 90px;
+    gap: 90p;
     width: 371px;
     height: 371px;
     background: rgba(0, 0, 0, 0.75);
@@ -79,7 +80,7 @@ body{
 
 .botonindex::before {
     content: '';
-    top: 83%;
+    top: 70%;
     width: 30px;
     height: 30px;
     transform: translateY(68%) translateX(-160%) rotate(135deg);
@@ -94,7 +95,7 @@ body{
 
 .botonindex::after {
     content: '';
-    top: 83%;
+    top: 70%;
     width: 70px;
     height: 8px;
     background-color: #ffffff;
@@ -105,17 +106,15 @@ body{
     border-radius: 3px;
 }
 
-.botonAdmin{
+.botonLimpieza{
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    right: 60%;
-    width: 277px;
-    height: 79px;
+    width: 407px;
+    height: 99px;
     text-decoration: none;
-    position: absolute;
-    bottom: 5px;
+    bottom: 20px;
     margin: 20px;
     border: 5px solid #000000;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -124,8 +123,8 @@ body{
     box-shadow: 0 5px 0 linear-gradient(90deg, #ca2629 0%, #d87f19 100%);
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 800;
-    font-size: 28px;
+    font-weight: 600;
+    font-size: 32px;
     line-height: 39px;
     color: #000000;
     box-sizing: border-box;
@@ -133,8 +132,40 @@ body{
     transition: all .1s linear;
 }
 
-.botonAdmin:active{
+.botonLimpieza:active{
     box-shadow: 0 4px 0 linear-gradient(90deg, #ca2629 0%, #d87f19 100%);
+    transform: translateY(4px);
+    opacity: 70%;
+}
+
+.botonRecarga{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 407px;
+    height: 99px;
+    text-decoration: none;
+    bottom: 20px;
+    margin: 20px;
+    border: 5px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 35px;
+    background: linear-gradient(90deg, #FF971E 0%, #FE3032 100%);
+    box-shadow: 0 5px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all .1s linear;
+}
+
+.botonRecarga:active{
+    box-shadow: 0 4px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
     transform: translateY(4px);
     opacity: 70%;
 }
