@@ -34,10 +34,9 @@ body{
     border-radius: 35px;
     background: linear-gradient(90deg, #FE3032 0%, #FF971E 100%);
     box-shadow: 0 5px 0 linear-gradient(90deg, #ca2629 0%, #d87f19 100%);
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
+    font-family: 'Inter';
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 32px;
     line-height: 39px;
     color: #000000;
@@ -49,6 +48,7 @@ body{
 .botonLimpieza:active{
     box-shadow: 0 4px 0 linear-gradient(90deg, #ca2629 0%, #d87f19 100%);
     transform: translateY(4px);
+    opacity: 70%;
 }
 
 .botonRecarga{
@@ -66,10 +66,9 @@ body{
     border-radius: 35px;
     background: linear-gradient(90deg, #FF971E 0%, #FE3032 100%);
     box-shadow: 0 5px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
+    font-family: 'Inter';
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 32px;
     line-height: 39px;
     color: #000000;
@@ -81,6 +80,7 @@ body{
 .botonRecarga:active{
     box-shadow: 0 4px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
     transform: translateY(4px);
+    opacity: 70%;
 }
 
 .volver{

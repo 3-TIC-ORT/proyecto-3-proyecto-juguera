@@ -1,9 +1,12 @@
 [
   {
-    "opcionSabor": "Frutilla",
+    "opcionSabor": "Limon",
     "opcionTamaño": "Jarra"
   },
   {
     "Confirmacion": "Jarra? Si"
+  },
+  {
+    "Estrellas": "Elegiste 2 Estrellas"
   }
 ]

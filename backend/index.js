@@ -46,7 +46,8 @@ onEvent("Confirmar", (Confirmar) => {
 
 onEvent("mandarOpinion", (mandarOpinion) => {
     if (mandarOpinion){
-        console.log("Opinión recibida:", mandarOpinion);
+        Estrellas = mandarOpinion;
+        console.log("Opinión recibida:", Estrellas);
         const lista = { "Estrellas": Estrellas };
         guardarDatos(lista); 
     }
@@ -57,8 +58,8 @@ onEvent("mandarOpinion", (mandarOpinion) => {
 
 
 /*const port = new SerialPort({
-    path: 'COM8',
-    baudRate: 9600,
+    path: '',
+    baudRate: ,
 })
 
 port.on("open", ()=>{
@@ -66,11 +67,7 @@ port.on("open", ()=>{
 })
 
 port.on("data",(data)=>{
-    console.log(data.toString())
-})
-
-port.write(data+"\n", (err)=>{
-    console.error(err);
+    console.log("Pitufina")
 })*/
 
 startServer();
