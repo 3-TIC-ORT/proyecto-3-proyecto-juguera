@@ -12,9 +12,8 @@ body{
 }
 
 .circulo{
-    top: 20%;
-    height: 500px;
-    width: 500px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -75,12 +74,12 @@ body{
     line-height: 48px;
     color: #FFFFFF;
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
 
 .botonindex::before {
     content: '';
-    top: 70%;
+    top: 58%;
     width: 30px;
     height: 30px;
     transform: translateY(68%) translateX(-160%) rotate(135deg);
@@ -95,7 +94,7 @@ body{
 
 .botonindex::after {
     content: '';
-    top: 70%;
+    top: 58%;
     width: 70px;
     height: 8px;
     background-color: #ffffff;
@@ -120,7 +119,7 @@ body{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 35px;
     background: linear-gradient(90deg, #FE3032 0%, #FF971E 100%);
-    box-shadow: 0 5px 0 linear-gradient(90deg, #ca2629 0%, #d87f19 100%);
+    box-shadow: 0 2px 0 #d87f19;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -133,7 +132,7 @@ body{
 }
 
 .botonLimpieza:active{
-    box-shadow: 0 4px 0 linear-gradient(90deg, #ca2629 0%, #d87f19 100%);
+    box-shadow: 0 2px 0 #d87f19;
     transform: translateY(4px);
     opacity: 70%;
 }
@@ -152,7 +151,7 @@ body{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 35px;
     background: linear-gradient(90deg, #FF971E 0%, #FE3032 100%);
-    box-shadow: 0 5px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
+    box-shadow: 0 2px 0 #d87f19;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -165,7 +164,7 @@ body{
 }
 
 .botonRecarga:active{
-    box-shadow: 0 4px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
+    box-shadow: 0 2px 0 #d87f19;
     transform: translateY(4px);
     opacity: 70%;
 }

@@ -3,12 +3,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0px;
+    gap: 135px;
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(174.02deg, #FFBD00 19.27%, #FF971E 39.63%, #FE3032 107.77%); 
+    width: 90vw;
+    height: 98.55vh;
+    background: linear-gradient(174.02deg, #FFBD00 19.27%, #FF971E 39.63%, #FE3032 107.77%);
 }
 
 .circulo{
@@ -16,18 +15,6 @@ body{
     width: 300px;
     border-radius: 50%;
     display: inline-block;
-}
-
-.textoPrincipal{
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-weight: 800;
-    color: #000000;
-    font-size: 70px;
-    height: 200px;
-    width: 600px;
-    margin-left: 10px;
 }
 
 .volver{
@@ -44,7 +31,7 @@ body{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 35px;
     background: linear-gradient(90deg, #FF971E 0%, #FE3032 100%);
-    box-shadow: 0 5px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
+    box-shadow: 0 2px 0 #d87f19;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
@@ -54,13 +41,6 @@ body{
     box-sizing: border-box;
     overflow: hidden;
     padding-right: 40px;
-    transition: all .1s linear;
-}
-
-.volver:active{
-    box-shadow: 0 4px 0 linear-gradient(90deg, #d87f19 0%, #ca2629 100%);
-    transform: translateY(4px);
-    opacity: 70%;
 }
 
 .volver::after {
@@ -86,36 +66,13 @@ body{
     border-bottom: 4px solid #000000;
 }
 
-.texto{
-    margin-left: 30px;
-    font-size: 25px;
-}
-
-.confirmar{
-    height: 420px;
-    width: 500px;
-    transition: all .1s linear;
-    transform: translateY(-40px);
-}
-
-.confirmar:active{
+.volver:active{
+    box-shadow: 0 2px 0 #d87f19;
+    transform: translateY(4px);
     opacity: 70%;
 }
 
-.aConfirmar{
-    display: flex;
-    justify-content: center;
-}
-
-.espacioCyR{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.divDef{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.texto {
+    margin-left: 30px;
+    font-size: 25px;
 }

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limpieza</title>
-    <link rel="stylesheet" href="paginaLimpieza.css">
+    <title>Pagina Secundaria 3</title>
+    <link rel="stylesheet" href="../css/pagina3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -13,13 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <a class="volver" href="index.html">
+    <div class="divCirculo">
+        <img class="circulo" src="../img/JUGOMIX.png">
+        <p class="textoPrincipal">¿QUE RECIPIENTE VAS A USAR?</p>
+    </div>
+    <div class="cajaOpciones">
+        <a href="../html/paginaConfirmar.html" class="cajaOpcion"><img src="../img/jugomixvaso.png" id="tamaño1" class="vasoMix"></a>
+        <a href="../html/paginaConfirmar.html" class="cajaOpcion"><img src="../img/jarra.png" id="tamaño2" class="jarraMix"></a>
+    </div>
+    <a class="volver" href="../html/pagina2.html">
         <p class="texto">ANTERIOR</p>
     </a>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
-    <script src="socket.js"></script>
-    <script src="scriptAdmin.js"></script>
+    <script src="../js/socket.js"></script>
+    <script src="../js/scriptPagina3.js"></script>
 </body>
 </html>
