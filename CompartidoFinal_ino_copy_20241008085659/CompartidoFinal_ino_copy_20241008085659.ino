@@ -11,6 +11,8 @@ LiquidCrystal_I2C lcd(0x27, 16,2);
 #define bocina 28
 #define NARANJA 5
 #define MANZANA 4
+#define LIMON 9
+#define FRUTILLA 10
 
 //defino el tiempo que va a tener el vaso y la jarra (en el normal y en el concentrado)
 #define TIEMPO_JARRA_NORMAL 5
@@ -77,6 +79,8 @@ void setup() {
   pinMode(bocina,OUTPUT); //Bocina
   pinMode(MANZANA,OUTPUT); //bomba del concentrado de manzana
   pinMode(NARANJA,OUTPUT); //bomba del concentrado de naranja
+  pinMode (LIMON, OUTPUT);
+  pinMode(FRUTILLA, OUTPUT);
 }
 
 
@@ -133,7 +137,16 @@ void loop() {
     } else if (sabor == "Manzana ") {
       funcion(MANZANA,tamano,"Concentrado");
       Serial.println("Manzana");
+    } else if (sabor == "Limon") {
+      funcion(LIMON,tamano,"Concentrado");
+      Serial.println("Limon");
+    } else if (sabor == "Frutilla") {
+      funcion(FRUTILLA,tamano,"Concentrado");
+      Serial.println("Limon");
     }
+    
+    
+    
 
     funcion(bomba,tamano,"Normal");
     delay(DELAY);
