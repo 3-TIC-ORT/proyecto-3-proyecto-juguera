@@ -76,3 +76,30 @@ body{
     margin-left: 30px;
     font-size: 25px;
 }
+
+.proceso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px 10px;
+    gap: 90px;
+    width: 275px;
+    height: 275px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    text-decoration: none;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-size: 25px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.proceso:active{
+    transform: translateY(4px);
+    opacity: 70%;
+}

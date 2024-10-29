@@ -13,7 +13,7 @@ body{
 
 .circulo{
     height: 300px;
-    width: 300px;
+    width: 310px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -32,9 +32,6 @@ body{
     align-items: center;
     padding: 0px 10px 10px;
     gap: 90px;
-    width: 275px;
-    height: 275px;
-    background: rgba(0, 0, 0, 0.75);
     border-radius: 50%;
     text-decoration: none;
     color: #FFFFFF;

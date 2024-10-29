@@ -77,7 +77,7 @@ body{
     font-size: 25px;
 }
 
-.vaso{
+.proceso{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,7 +99,34 @@ body{
     font-style: normal;
 }
 
-.vaso:active{
+.proceso:active{
     transform: translateY(4px);
     opacity: 70%;
+}
+
+.textoPrincipal{
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px; 
+    color: #000000;
+    text-align: center; 
+    font-optical-sizing: auto;
+}
+
+.confirmar{
+    height: 360px;
+    width: 360px;
+    transition: all .1s linear;
+    transform: translateY(-40px);
+}
+
+.confirmar:active{
+    opacity: 70%;
+}
+
+.aConfirmar{
+    display: flex;
+    justify-content: center;
 }

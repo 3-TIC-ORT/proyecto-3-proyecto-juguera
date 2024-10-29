@@ -6,6 +6,15 @@ if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
+const port = new SerialPort({
+    path: 'COM12',
+    baudRate: '9600',
+})
+
+port.on("open", ()=>{
+    console.log("Puerto Abierto");
+})
+
 let Sabor = "";
 let Tamaño = "";
 let Estrellas = "";
@@ -28,6 +37,8 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
     if (Sabor && Tamaño) {
         const lista = { "opcionSabor": Sabor, "opcionTamaño": Tamaño };
         guardarDatos(lista);
+        const datosSerial = `${Sabor} ${Tamaño}\n`;
+        port.write(datosSerial);
     } else {
         console.error("No funco");
     }
@@ -55,19 +66,5 @@ onEvent("mandarOpinion", (mandarOpinion) => {
         console.log("No funco las estrellas")
     }
 });
-
-
-/*const port = new SerialPort({
-    path: '',
-    baudRate: ,
-})
-
-port.on("open", ()=>{
-    console.log("Puerto Abierto");
-})
-
-port.on("data",(data)=>{
-    console.log("Pitufina")
-})*/
 
 startServer();

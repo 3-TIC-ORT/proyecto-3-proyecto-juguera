@@ -17,18 +17,116 @@ body{
     display: inline-block;
 }
 
-.completar {
+.volver{
+    display: flex;
+    align-items: center;
+    width: 307px;
+    height: 79px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 20px;
+    border: 5px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 35px;
+    background: linear-gradient(90deg, #FF971E 0%, #FE3032 100%);
+    box-shadow: 0 2px 0 #d87f19;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-right: 40px;
+}
+
+.volver::after {
+    content: '';
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; 
+    height: 5px; 
+    background-color: #000000; 
+}
+
+.volver::before {
+    content: '';
+    position: absolute;
+    right: 5px; 
+    top: 50%;
+    transform: translateY(-50%) translateX(-230%) rotate(135deg);
+    width: 17px;
+    height: 17px;
+    border-right: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+}
+
+.volver:active{
+    box-shadow: 0 2px 0 #d87f19;
+    transform: translateY(4px);
+    opacity: 70%;
+}
+
+.texto {
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.proceso{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    width: 450px;
-    background-color: #FFC200;
-    color: black;
+    padding: 0px 10px 10px;
+    gap: 90px;
+    width: 275px;
+    height: 275px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
     text-decoration: none;
-    font-size: 30px;
-    font-family: "Inter", sans-serif;
-    font-weight: 800;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-size: 25px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
-    border-radius: 80px;
+}
+
+.proceso:active{
+    transform: translateY(4px);
+    opacity: 70%;
+}
+
+.textoPrincipal{
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px; 
+    color: #000000;
+    text-align: center; 
+    font-optical-sizing: auto;
+}
+
+.confirmar{
+    height: 360px;
+    width: 360px;
+    transition: all .1s linear;
+    transform: translateY(-40px);
+}
+
+.confirmar:active{
+    opacity: 70%;
+}
+
+.aConfirmar{
+    display: flex;
+    justify-content: center;
 }

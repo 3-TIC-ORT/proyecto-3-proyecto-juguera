@@ -1,3 +1,5 @@
+#include <LiquidCrystal.h>
+
 //librerias de lcd
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
@@ -341,4 +343,3 @@ void loop() {
  }
   
       
-
