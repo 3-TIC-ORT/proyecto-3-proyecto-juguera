@@ -13,6 +13,9 @@ if (fs.existsSync("opcionesElegidas.json")) {
 
 port.on("open", ()=>{
     console.log("Puerto Abierto");
+
+port.on('data', (data) => {
+    console.log('Respuesta del Arduino:', data.toString());
 })*/
 
 let Sabor = "";
@@ -39,6 +42,10 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
         guardarDatos(lista);
         const datosSerial = `${Sabor} ${Tamaño}\n`;
         //port.write(datosSerial);
+        console.log('Datos enviados al Arduino:', datosSerial);
+        port.once('data', (response) => {
+            console.log('Respuesta del Arduino:', response.toString());
+        });
     } else {
         console.error("No funco");
     }
