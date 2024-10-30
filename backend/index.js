@@ -6,14 +6,14 @@ if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
-const port = new SerialPort({
-    path: 'COM12',
-    baudRate: '9600',
-})
+/*const port = new SerialPort({
+    path: 'COM11',
+    baudRate: 9600
+});
 
 port.on("open", ()=>{
     console.log("Puerto Abierto");
-})
+})*/
 
 let Sabor = "";
 let Tamaño = "";
@@ -38,7 +38,7 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
         const lista = { "opcionSabor": Sabor, "opcionTamaño": Tamaño };
         guardarDatos(lista);
         const datosSerial = `${Sabor} ${Tamaño}\n`;
-        port.write(datosSerial);
+        //port.write(datosSerial);
     } else {
         console.error("No funco");
     }

@@ -130,3 +130,7 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.cargando{
+    border-radius: 50%;
+}

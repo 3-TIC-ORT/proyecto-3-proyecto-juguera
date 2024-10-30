@@ -132,5 +132,5 @@ body{
 }
 
 .cargando{
-    border: 0px transparent;
+    border-radius: 50%;
 }

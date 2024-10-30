@@ -9,4 +9,5 @@ botonCompletar.addEventListener("click", () => {
         mandarOpinion = "Elegiste 0 Estrellas";
     }
     postData("mandarOpinion", mandarOpinion);
+    window.location.href = 'index.html';
 });

@@ -1,5 +1,6 @@
 function elegidoSabor(Sabor){
     postData("opcionesSabor", Sabor);
+    window.location.href = 'pagina3.html';
 }
 
 document.getElementById("sabor1").addEventListener("click", function(){
