@@ -29,8 +29,8 @@ body{
 }
 
 .vasoMix{
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 180px;
     color: black;
     text-decoration: none;
     font-size: 30px;
@@ -40,8 +40,9 @@ body{
 }
 
 .jarraMix{
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 180px;
+    margin-left: 25px;
     color: black;
     text-decoration: none;
     font-size: 30px;

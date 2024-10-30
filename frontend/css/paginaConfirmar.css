@@ -92,8 +92,8 @@ body{
 }
 
 .confirmar{
-    height: 560px;
-    width: 560px;
+    height: 360px;
+    width: 360px;
     transition: all .1s linear;
     transform: translateY(-40px);
 }

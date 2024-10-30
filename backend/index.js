@@ -41,11 +41,11 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
         const lista = { "opcionSabor": Sabor, "opcionTamaño": Tamaño };
         guardarDatos(lista);
         const datosSerial = `${Sabor} ${Tamaño}\n`;
-        //port.write(datosSerial);
+        /*port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         port.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
-        });
+        });*/
     } else {
         console.error("No funco");
     }
