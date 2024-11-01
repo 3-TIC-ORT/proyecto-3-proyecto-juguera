@@ -7,9 +7,9 @@ if (fs.existsSync("opcionesElegidas.json")) {
 }
 
 const port = new SerialPort({
-    path: 'COM12',
-    baudRate: '9600',
-})
+    path: 'COM7',
+    baudRate: 9600,
+});
 
 port.on("open", ()=>{
     console.log("Puerto Abierto");
