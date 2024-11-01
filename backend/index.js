@@ -57,6 +57,12 @@ onEvent("Confirmar", (Confirmar) => {
         const lista = { "Confirmacion": Tamaño + "? " + Confirmar };
         guardarDatos(lista);
         Confirmado = true;
+        const datosSerial = `confirmado\n`;
+        port.write(datosSerial);
+        console.log('Datos enviados al Arduino:', datosSerial);
+        port.once('data', (response) => {
+            console.log('Respuesta del Arduino:', response.toString());
+        });
     } else {
         console.log("Ya fue confirmado");
     }
