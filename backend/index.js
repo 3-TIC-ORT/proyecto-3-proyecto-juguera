@@ -37,7 +37,7 @@ onEvent("opcionesSabor", (opcionesSabor) => {
 onEvent("opcionesTamaño", (opcionesTamaño) => {
     Tamaño = opcionesTamaño;
     console.log("Tamaño recibido:", Tamaño);
-    if (Sabor && Tamaño) {
+    if (Sabor && Tamaño){
         const lista = { "opcionSabor": Sabor, "opcionTamaño": Tamaño };
         guardarDatos(lista);
         const datosSerial = `${Sabor} ${Tamaño}\n`;
@@ -52,7 +52,7 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
 });
 
 onEvent("Confirmar", (Confirmar) => {
-    if (!Confirmado) {
+    if (!Confirmado){
         console.log(Tamaño, "confirmado?", Confirmar);
         const lista = { "Confirmacion": Tamaño + "? " + Confirmar };
         guardarDatos(lista);
@@ -82,7 +82,7 @@ onEvent("mandarOpinion", (mandarOpinion) => {
 
 onEvent("EmpezarLimpieza", (limpieza) => {
     if (limpieza){
-        console.log("Proceso de Limpieza activado")
+        console.log("Proceso de Limpieza activado");
         const datosSerial = `${limpieza}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -94,7 +94,7 @@ onEvent("EmpezarLimpieza", (limpieza) => {
 
 onEvent("Recipiente", (confirmadoRecipiente) => {
     if (confirmadoRecipiente){
-        console.log("Recipiente colocado")
+        console.log("Recipiente colocado");
         const datosSerial = `${confirmadoRecipiente}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -106,7 +106,7 @@ onEvent("Recipiente", (confirmadoRecipiente) => {
 
 onEvent("Agua", (confirmadoAgua) => {
     if (confirmadoAgua){
-        console.log("Agua colocada")
+        console.log("Agua colocada");
         const datosSerial = `${confirmadoAgua}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -118,7 +118,7 @@ onEvent("Agua", (confirmadoAgua) => {
 
 onEvent("EmpezarRecarga", (Recarga) => {
     if (Recarga){
-        console.log("Proceso de Recarga activado")
+        console.log("Proceso de Recarga activado");
         const datosSerial = `${Recarga}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -130,7 +130,7 @@ onEvent("EmpezarRecarga", (Recarga) => {
 
 onEvent("vasoConcentrado", (colocarVaso) => {
     if (colocarVaso){
-        console.log("Vaso para el concentrado Confirmado")
+        console.log("Vaso para el concentrado Confirmado");
         const datosSerial = `${colocarVaso}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -142,7 +142,7 @@ onEvent("vasoConcentrado", (colocarVaso) => {
 
 onEvent("vasoConcentrado", (colocarPolvo) => {
     if (colocarPolvo){
-        console.log("Polvo Confirmado")
+        console.log("Polvo Confirmado");
         const datosSerial = `${colocarPolvo}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -154,7 +154,7 @@ onEvent("vasoConcentrado", (colocarPolvo) => {
 
 onEvent("recipienteRevolver", (RecipienteRevolver) => {
     if (RecipienteRevolver){
-        console.log("Polvo Confirmado")
+        console.log("Polvo Confirmado");
         const datosSerial = `${RecipienteRevolver}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -166,7 +166,7 @@ onEvent("recipienteRevolver", (RecipienteRevolver) => {
 
 onEvent("RecargaFinal", (RecargaFinal) => {
     if (RecargaFinal){
-        console.log("Polvo Confirmado")
+        console.log("Polvo Confirmado");
         const datosSerial = `${RecargaFinal}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
