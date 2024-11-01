@@ -1,5 +1,6 @@
 function elegidoTamaño(Tamaño){
     postData("opcionesTamaño", Tamaño);
+    window.location.href = 'paginaConfirmar.html';
 }
 
 document.getElementById("tamaño1").addEventListener("click", function(){

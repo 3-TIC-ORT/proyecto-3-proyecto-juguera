@@ -12,8 +12,8 @@ body{
 }
 
 .circulo{
-    height: 300px;
-    width: 310px;
+    height: 350px;
+    width: 350px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -88,7 +88,7 @@ body{
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%) translateY(68%) rotate(135deg);
+    transform: translateX(-30%) translateY(68%) rotate(135deg);
     border-radius: 3px;
 }
 
@@ -101,7 +101,7 @@ body{
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-76%) translateY(485%);
+    transform: translateX(-65%) translateY(485%);
     border-radius: 3px;
 }
 
