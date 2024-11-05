@@ -1,22 +1,21 @@
 import { onEvent, startServer } from "soquetic";
 import fs from "fs";
-import {SerialPort} from "serialport";
+import {SerialPort, ReadlineParser} from "serialport";
 
 if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
 const port = new SerialPort({
-    path: 'COM7',
+    path: 'COM8',
     baudRate: 9600,
 });
 
+const parser = port.pipe(new ReadlineParser({ delimiter: '\n' }));
+
 port.on("open", ()=>{
     console.log("Puerto Abierto");
-
-port.on('data', (data) => {
-    console.log('Respuesta del Arduino:', data.toString());
-})})
+})
 
 let Sabor = "";
 let Tamaño = "";
@@ -43,7 +42,7 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
         const datosSerial = `${Sabor} ${Tamaño}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     } else {
@@ -60,7 +59,7 @@ onEvent("Confirmar", (Confirmar) => {
         const datosSerial = `confirmado\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     } else {
@@ -86,7 +85,7 @@ onEvent("EmpezarLimpieza", (limpieza) => {
         const datosSerial = `${limpieza}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
@@ -98,7 +97,7 @@ onEvent("Recipiente", (confirmadoRecipiente) => {
         const datosSerial = `${confirmadoRecipiente}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
@@ -110,7 +109,7 @@ onEvent("Agua", (confirmadoAgua) => {
         const datosSerial = `${confirmadoAgua}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
@@ -122,7 +121,7 @@ onEvent("EmpezarRecarga", (Recarga) => {
         const datosSerial = `${Recarga}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
@@ -134,7 +133,7 @@ onEvent("vasoConcentrado", (colocarVaso) => {
         const datosSerial = `${colocarVaso}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
@@ -146,7 +145,7 @@ onEvent("vasoConcentrado", (colocarPolvo) => {
         const datosSerial = `${colocarPolvo}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
@@ -158,7 +157,7 @@ onEvent("recipienteRevolver", (RecipienteRevolver) => {
         const datosSerial = `${RecipienteRevolver}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
@@ -170,7 +169,7 @@ onEvent("RecargaFinal", (RecargaFinal) => {
         const datosSerial = `${RecargaFinal}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
-        port.once('data', (response) => {
+        parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
     }
