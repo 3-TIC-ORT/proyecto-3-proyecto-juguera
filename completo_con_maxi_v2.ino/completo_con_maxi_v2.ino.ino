@@ -41,30 +41,21 @@ String input = ""; //la palabra completa
 //le entrego el pin que tiene que prender, el tiempo y si es concentrado o normal
 //y la funcion le asigna un numero al tiempo y dsp combina el pin (lo prende y lo apaga) durante ese tiempo
 // como el tiempo es diferente para la bomba normal o la concentrada crea diferentes tiempos para cada una
-void funcion (int pin, int tiempoNormal, int tiempoConcentrado, String tamanof) {
+void funcion (int pin, int tiempo, String tamanof) {
+  
   if (tamanof == "Jarra") {
-    tiempoNormal = 2*tiempoNormal;
-    tiempoConcentrado = 2*tiempoConcentrado;
+    tiempo = tiempo*2;
   }
 
-  if (pin == 7 || (pin == 3))  {
-    digitalWrite(pin,HIGH);
-    Serial.println("P1");
-    Serial.println(tiempoConcentrado);
-    delay(tiempoConcentrado);
-    Serial.println("P2");
-    digitalWrite(pin,LOW);
-    Serial.println("P3");
-  } else {
-    digitalWrite(pin,HIGH);
-    Serial.println("P1");
-    delay(tiempoNormal);
-    Serial.println("P2");
-    digitalWrite(pin,LOW);
-    Serial.println("P3");
-  }
+  digitalWrite(pin,HIGH);
+  Serial.println("P1");
+  Serial.println(tiempo);
+  delay(tiempo);
+  Serial.println("P2");
+  digitalWrite(pin,LOW);
+  Serial.println("P3");
+
   Serial.println("P4");
-
 
 }
 
@@ -140,10 +131,10 @@ void loop() {
     Serial.println("Seguir adelante");
 
     if(sabor == "Naranja ") {
-      funcion(7,1000,1000,tamano);
+      funcion(7,1000,tamano);
       Serial.println("Naranja");
     } else if (sabor == "Manzana ") {
-      funcion(3,1000,1000,tamano);
+      funcion(3,1000,tamano);
       Serial.println("Manzana");
     } /*else if (sabor == "Limon") {
       funcion(LIMON,tamano,"Concentrado");
@@ -155,13 +146,13 @@ void loop() {
   
     delay(2500);
     
-    funcion(6,3000,3000,tamano);
+    funcion(6,3000,tamano);
     delay(2500);
     Serial.println("carga agua");
-    funcion(4,2000,2000,tamano);
+    funcion(4,2000,tamano);
     delay(2500);
     Serial.println("motor ta");
-    funcion(5,3000,3000,tamano);
+    funcion(5,3000,tamano);
     delay(2500);
     Serial.println("electro ta");
     lcd.clear();
@@ -182,6 +173,7 @@ void loop() {
       Serial.println("empezando limpieza");
       data = Serial.readString();
       data.trim();
+      lcd.clear();
       lcd.setCursor(0,0); //posicion
       lcd.print("Poner");
       lcd.setCursor(1,1); //posicion
