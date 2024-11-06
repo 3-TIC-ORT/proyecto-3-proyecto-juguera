@@ -243,6 +243,8 @@ void loop() {
       lcd.clear();
       lcd.print(millis()/1000);
       Serial.println("limpieza terminada"); //le pregunto a timo si esta confirmado que el vaso esta ahí
+      delay(2500);
+      lcd.clear();
       contador = 0;
       
     }
@@ -268,10 +270,10 @@ void loop() {
         
       }
       digitalWrite(bomba, HIGH);
-      digitalWrite(electro,HIGH);
       delay(2200);
+      digitalWrite(electro,HIGH);
       digitalWrite(bomba,LOW);
-      delay(2000);
+      delay(2500);
       digitalWrite(electro, LOW);
       lcd.clear();
       lcd.setCursor(0,0); //posicion
@@ -336,6 +338,8 @@ void loop() {
       lcd.clear();
       lcd.print(millis()/1000);
       Serial.println("recarga terminada"); //le pregunto a timo si esta confirmado que el vaso esta ahí
+      delay(2500);
+      lcd.clear();
       contador = 0;
 
       }else{
