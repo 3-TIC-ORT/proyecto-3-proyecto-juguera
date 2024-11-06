@@ -6,8 +6,8 @@ if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
-/*const port = new SerialPort({
-    path: 'COM11',
+const port = new SerialPort({
+    path: 'COM10',
     baudRate: 9600
 });
 
@@ -16,7 +16,9 @@ port.on("open", ()=>{
 
 port.on('data', (data) => {
     console.log('Respuesta del Arduino:', data.toString());
-})*/
+})
+})
+
 
 let Sabor = "";
 let Tamaño = "";
@@ -41,11 +43,11 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
         const lista = { "opcionSabor": Sabor, "opcionTamaño": Tamaño };
         guardarDatos(lista);
         const datosSerial = `${Sabor} ${Tamaño}\n`;
-        /*port.write(datosSerial);
+        port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         port.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
-        });*/
+        });
     } else {
         console.error("No funco");
     }
