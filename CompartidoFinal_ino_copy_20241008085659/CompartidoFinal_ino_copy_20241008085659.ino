@@ -216,10 +216,10 @@ void loop() {
       lcd.setCursor(0,0); //posicion
       lcd.print("Limpiando");
       digitalWrite(bomba, HIGH);
-      delay(10000);
+      delay(4000);
       digitalWrite(bomba, LOW);
       digitalWrite(motor, HIGH);
-      delay(8000);
+      delay(6000);
       digitalWrite(motor, LOW);
       digitalWrite(electro, HIGH);
       lcd.clear();
@@ -234,7 +234,7 @@ void loop() {
       digitalWrite(bocina, LOW);
       delay(5000);
       digitalWrite(electro, LOW);
-      delay(5000);
+      delay(3000);
       lcd.clear();
       lcd.print(millis()/1000);
       Serial.println("limpieza terminada"); //le pregunto a timo si esta confirmado que el vaso esta ahí
@@ -264,7 +264,7 @@ void loop() {
       }
       digitalWrite(bomba, HIGH);
       digitalWrite(electro,HIGH);
-      delay(2200);
+      delay(2000);
       digitalWrite(bomba,LOW);
       delay(2000);
       digitalWrite(electro, LOW);
