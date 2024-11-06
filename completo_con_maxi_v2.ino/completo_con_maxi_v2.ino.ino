@@ -44,8 +44,9 @@ String input = ""; //la palabra completa
 void funcion (int pin, int tiempo, String tamanof) {
   
   if (tamanof == "Jarra") {
-    tiempo = tiempo*2;
+    tiempo = tiempo*2,5;
   }
+
 
   digitalWrite(pin,HIGH);
   Serial.println("P1");
