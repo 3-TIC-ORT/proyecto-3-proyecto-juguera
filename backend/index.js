@@ -6,7 +6,7 @@ if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
-const port = new SerialPort({
+/*const port = new SerialPort({
     path: 'COM9',
     baudRate: 9600
 });
@@ -15,7 +15,7 @@ const parser = port.pipe(new ReadlineParser({ delimiter: '\n' }));
 
 port.on("open", ()=>{
     console.log("Puerto Abierto");
-})
+})*/
 
 let Sabor = "";
 let Tamaño = "";
@@ -61,6 +61,7 @@ onEvent("Confirmar", (Confirmar) => {
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            Confirmado = false;
         });
     } else {
         console.log("Ya fue confirmado");
