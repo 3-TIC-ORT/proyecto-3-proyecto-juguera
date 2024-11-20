@@ -7,7 +7,7 @@ if (fs.existsSync("opcionesElegidas.json")) {
 }
 
 const port = new SerialPort({
-    path: 'COM9',
+    path: 'COM3',
     baudRate: 9600
 });
 
@@ -62,6 +62,7 @@ onEvent("Confirmar", (Confirmar) => {
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
         });
+        Confirmado = false;
     } else {
         console.log("Ya fue confirmado");
     }

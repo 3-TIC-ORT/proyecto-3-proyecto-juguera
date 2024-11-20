@@ -44,9 +44,8 @@ String input = ""; //la palabra completa
 void funcion (int pin, int tiempo, String tamanof) {
   
   if (tamanof == "Jarra") {
-    tiempo = tiempo*2,5;
+    tiempo = tiempo*2.5;
   }
-
 
   digitalWrite(pin,HIGH);
   Serial.println("P1");
@@ -55,9 +54,7 @@ void funcion (int pin, int tiempo, String tamanof) {
   Serial.println("P2");
   digitalWrite(pin,LOW);
   Serial.println("P3");
-
   Serial.println("P4");
-
 }
 
 
@@ -129,13 +126,18 @@ void loop() {
   
   if(contador == 7 && confirmado == "confirmado") { //si confirmado esta confrimado que siga con el proceso 
     confirmado = "";
-    Serial.println("Seguir adelante");
+    Serial.println("Seguir adelante"); 
+
+    digitalWrite(5,LOW);
+    digitalWrite(4,LOW);
+    digitalWrite(7,LOW);
+    digitalWrite(6,LOW);
 
     if(sabor == "Naranja ") {
-      funcion(7,1000,tamano);
+      funcion(7,500,tamano);
       Serial.println("Naranja");
     } else if (sabor == "Manzana ") {
-      funcion(3,1000,tamano);
+      funcion(3,500,tamano);
       Serial.println("Manzana");
     } /*else if (sabor == "Limon") {
       funcion(LIMON,tamano,"Concentrado");
@@ -147,10 +149,10 @@ void loop() {
   
     delay(2500);
     
-    funcion(6,3000,tamano);
+    funcion(6,3500,tamano);
     delay(2500);
     Serial.println("carga agua");
-    funcion(4,2000,tamano);
+    funcion(4,2000, tamano);
     delay(2500);
     Serial.println("motor ta");
     funcion(5,3000,tamano);
@@ -159,6 +161,8 @@ void loop() {
     lcd.clear();
     lcd.print("Terminado");
     Serial.println("temrinado");
+    delay(2000);
+    lcd.clear();
       
     sabor = "";
     tamano ="";
@@ -227,6 +231,8 @@ void loop() {
       delay(8000);
       digitalWrite(motor, LOW);
       digitalWrite(electro, HIGH);
+      delay(8000);
+      digitalWrite(electro, LOW);
       lcd.clear();
       lcd.setCursor(0,0); //posicion
       lcd.print("Limpieza");
@@ -237,8 +243,6 @@ void loop() {
       delay(1000);
       digitalWrite(led, LOW);
       digitalWrite(bocina, LOW);
-      delay(5000);
-      digitalWrite(electro, LOW);
       delay(5000);
       lcd.clear();
       lcd.print(millis()/1000);
