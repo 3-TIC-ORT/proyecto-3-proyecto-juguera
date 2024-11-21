@@ -6,8 +6,8 @@ if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
-/*const port = new SerialPort({
-    path: 'COM9',
+const port = new SerialPort({
+    path: 'COM3',
     baudRate: 9600
 });
 
@@ -15,7 +15,7 @@ const parser = port.pipe(new ReadlineParser({ delimiter: '\n' }));
 
 port.on("open", ()=>{
     console.log("Puerto Abierto");
-})*/
+})
 
 let Sabor = "";
 let Tamaño = "";
@@ -129,7 +129,7 @@ onEvent("EmpezarRecarga", (Recarga) => {
     }
 });
 
-onEvent("vasoConcentrado", (colocarVaso) => {
+onEvent("vasoRecarga", (colocarVaso) => {
     if (colocarVaso){
         console.log("Vaso para el concentrado Confirmado");
         const datosSerial = `${colocarVaso}\n`;
@@ -155,7 +155,7 @@ onEvent("vasoConcentrado", (colocarPolvo) => {
 
 onEvent("recipienteRevolver", (RecipienteRevolver) => {
     if (RecipienteRevolver){
-        console.log("Polvo Confirmado");
+        console.log("Recipiente Revuelto");
         const datosSerial = `${RecipienteRevolver}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -167,7 +167,7 @@ onEvent("recipienteRevolver", (RecipienteRevolver) => {
 
 onEvent("RecargaFinal", (RecargaFinal) => {
     if (RecargaFinal){
-        console.log("Polvo Confirmado");
+        console.log("Recarga Final");
         const datosSerial = `${RecargaFinal}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);

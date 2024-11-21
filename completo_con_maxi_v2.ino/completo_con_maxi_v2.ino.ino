@@ -275,8 +275,8 @@ void loop() {
       }
       digitalWrite(bomba, HIGH);
       delay(2200);
-      digitalWrite(electro,HIGH);
       digitalWrite(bomba,LOW);
+      digitalWrite(electro, HIGH);
       delay(2500);
       digitalWrite(electro, LOW);
       lcd.clear();
