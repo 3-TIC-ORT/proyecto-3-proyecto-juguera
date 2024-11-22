@@ -1,13 +1,14 @@
 import { onEvent, startServer } from "soquetic";
 import fs from "fs";
 import {SerialPort, ReadlineParser} from "serialport";
+import path from "path";
 
 if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
 const port = new SerialPort({
-    path: 'COM8',
+    path: COM8;
     baudRate: 9600
 });
 
@@ -63,6 +64,7 @@ onEvent("Confirmar", (Confirmar) => {
             console.log('Respuesta del Arduino:', response.toString());
             Confirmado = false;
         });
+        Confirmado = false;
     } else {
         console.log("Ya fue confirmado");
     }
@@ -128,7 +130,7 @@ onEvent("EmpezarRecarga", (Recarga) => {
     }
 });
 
-onEvent("vasoConcentrado", (colocarVaso) => {
+onEvent("vasoRecarga", (colocarVaso) => {
     if (colocarVaso){
         console.log("Vaso para el concentrado Confirmado");
         const datosSerial = `${colocarVaso}\n`;
@@ -154,7 +156,7 @@ onEvent("vasoConcentrado", (colocarPolvo) => {
 
 onEvent("recipienteRevolver", (RecipienteRevolver) => {
     if (RecipienteRevolver){
-        console.log("Polvo Confirmado");
+        console.log("Recipiente Revuelto");
         const datosSerial = `${RecipienteRevolver}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
@@ -166,7 +168,7 @@ onEvent("recipienteRevolver", (RecipienteRevolver) => {
 
 onEvent("RecargaFinal", (RecargaFinal) => {
     if (RecargaFinal){
-        console.log("Polvo Confirmado");
+        console.log("Recarga Final");
         const datosSerial = `${RecargaFinal}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
