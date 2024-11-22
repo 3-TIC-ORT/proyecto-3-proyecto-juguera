@@ -13,7 +13,7 @@ body{
 
 .circulo{
     height: 350px;
-    width: 350px;
+    width: 360px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -79,7 +79,7 @@ body{
 
 .botonindex::before {
     content: '';
-    top: 62%;
+    top: 58%;
     width: 30px;
     height: 30px;
     transform: translateY(68%) translateX(-160%) rotate(135deg);
@@ -94,7 +94,7 @@ body{
 
 .botonindex::after {
     content: '';
-    top: 62%;
+    top: 58%;
     width: 70px;
     height: 8px;
     background-color: #ffffff;

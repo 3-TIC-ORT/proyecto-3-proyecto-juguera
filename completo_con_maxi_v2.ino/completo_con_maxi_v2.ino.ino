@@ -134,7 +134,7 @@ void loop() {
     digitalWrite(6,LOW);
 
     if(sabor == "Naranja ") {
-      funcion(7,500,tamano);
+      funcion(7,1000,tamano);
       Serial.println("Naranja");
     } else if (sabor == "Manzana ") {
       funcion(3,500,tamano);

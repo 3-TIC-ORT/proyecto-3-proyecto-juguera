@@ -8,7 +8,7 @@ if (fs.existsSync("opcionesElegidas.json")) {
 }
 
 const port = new SerialPort({
-    path: COM8;
+    path: "COM6",
     baudRate: 9600
 });
 
@@ -22,6 +22,7 @@ let Sabor = "";
 let Tamaño = "";
 let Estrellas = "";
 let Confirmado = false;
+const datosSerial = "";
 
 function guardarDatos(datos) {
     let listaVacia = JSON.parse(fs.readFileSync("opcionesElegidas.json", "utf-8"));
@@ -40,11 +41,14 @@ onEvent("opcionesTamaño", (opcionesTamaño) => {
     if (Sabor && Tamaño){
         const lista = { "opcionSabor": Sabor, "opcionTamaño": Tamaño };
         guardarDatos(lista);
-        const datosSerial = `${Sabor} ${Tamaño}\n`;
+        datosSerial = `${Sabor} ${Tamaño}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            Sabor = "";
+            Tamaño = "";
+            datosSerial = "";
         });
     } else {
         console.error("No funco");
@@ -57,14 +61,14 @@ onEvent("Confirmar", (Confirmar) => {
         const lista = { "Confirmacion": Tamaño + "? " + Confirmar };
         guardarDatos(lista);
         Confirmado = true;
-        const datosSerial = `confirmado\n`;
+        datosSerial = `confirmado\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
             Confirmado = false;
+            datosSerial = "";
         });
-        Confirmado = false;
     } else {
         console.log("Ya fue confirmado");
     }
@@ -85,11 +89,12 @@ onEvent("mandarOpinion", (mandarOpinion) => {
 onEvent("EmpezarLimpieza", (limpieza) => {
     if (limpieza){
         console.log("Proceso de Limpieza activado");
-        const datosSerial = `${limpieza}\n`;
+        datosSerial = `${limpieza}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
@@ -97,11 +102,12 @@ onEvent("EmpezarLimpieza", (limpieza) => {
 onEvent("Recipiente", (confirmadoRecipiente) => {
     if (confirmadoRecipiente){
         console.log("Recipiente colocado");
-        const datosSerial = `${confirmadoRecipiente}\n`;
+        datosSerial = `${confirmadoRecipiente}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
@@ -109,11 +115,12 @@ onEvent("Recipiente", (confirmadoRecipiente) => {
 onEvent("Agua", (confirmadoAgua) => {
     if (confirmadoAgua){
         console.log("Agua colocada");
-        const datosSerial = `${confirmadoAgua}\n`;
+        datosSerial = `${confirmadoAgua}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
@@ -121,11 +128,12 @@ onEvent("Agua", (confirmadoAgua) => {
 onEvent("EmpezarRecarga", (Recarga) => {
     if (Recarga){
         console.log("Proceso de Recarga activado");
-        const datosSerial = `${Recarga}\n`;
+        datosSerial = `${Recarga}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
@@ -133,11 +141,12 @@ onEvent("EmpezarRecarga", (Recarga) => {
 onEvent("vasoRecarga", (colocarVaso) => {
     if (colocarVaso){
         console.log("Vaso para el concentrado Confirmado");
-        const datosSerial = `${colocarVaso}\n`;
+        datosSerial = `${colocarVaso}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
@@ -145,11 +154,12 @@ onEvent("vasoRecarga", (colocarVaso) => {
 onEvent("vasoConcentrado", (colocarPolvo) => {
     if (colocarPolvo){
         console.log("Polvo Confirmado");
-        const datosSerial = `${colocarPolvo}\n`;
+        datosSerial = `${colocarPolvo}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
@@ -157,11 +167,12 @@ onEvent("vasoConcentrado", (colocarPolvo) => {
 onEvent("recipienteRevolver", (RecipienteRevolver) => {
     if (RecipienteRevolver){
         console.log("Recipiente Revuelto");
-        const datosSerial = `${RecipienteRevolver}\n`;
+        datosSerial = `${RecipienteRevolver}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
@@ -169,11 +180,12 @@ onEvent("recipienteRevolver", (RecipienteRevolver) => {
 onEvent("RecargaFinal", (RecargaFinal) => {
     if (RecargaFinal){
         console.log("Recarga Final");
-        const datosSerial = `${RecargaFinal}\n`;
+        datosSerial = `${RecargaFinal}\n`;
         port.write(datosSerial);
         console.log('Datos enviados al Arduino:', datosSerial);
         parser.once('data', (response) => {
             console.log('Respuesta del Arduino:', response.toString());
+            datosSerial = "";
         });
     }
 });
