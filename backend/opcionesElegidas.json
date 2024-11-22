@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "opcionSabor": "Naranja",
+    "opcionTamaño": "Vaso"
+  },
+  {
+    "Confirmacion": "Vaso? Si"
+  },
+  {
+    "Estrellas": "Elegiste -1 Estrellas"
+  },
+  {
+    "opcionSabor": "Naranja",
+    "opcionTamaño": "Jarra"
+  },
+  {
+    "Confirmacion": "Jarra? Si"
+  },
+  {
+    "Estrellas": "Elegiste -1 Estrellas"
+  }
+]

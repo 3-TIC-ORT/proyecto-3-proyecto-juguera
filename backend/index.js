@@ -6,8 +6,8 @@ if (fs.existsSync("opcionesElegidas.json")) {
     fs.writeFileSync("opcionesElegidas.json", JSON.stringify([]), "utf-8");
 }
 
-/*const port = new SerialPort({
-    path: 'COM9',
+const port = new SerialPort({
+    path: 'COM8',
     baudRate: 9600
 });
 
@@ -15,7 +15,7 @@ const parser = port.pipe(new ReadlineParser({ delimiter: '\n' }));
 
 port.on("open", ()=>{
     console.log("Puerto Abierto");
-})*/
+})
 
 let Sabor = "";
 let Tamaño = "";
